@@ -25,3 +25,8 @@ Once granted store ownership approval, new store owners can create stores, add p
 1. Inside the truffle console (which should now be running), run migrate --reset to migrate contracts onto your local blockchain.
 1. Open a second terminal window and navigate to the root directory of the project.
 1. Run npm run start to build the React front end and open a browser window pointed at localhost:3000/ where the app should now run.
+
+#### Interacting with the Application Steps
+1. When you land on the application, you should have the Admin Account (Account 1 by default) selected in MetaMask. As there are no open requests for store ownership, there is nothing to do on this page.
+1. Open MetaMask and select Account 2.
+1. Reload the page. You should now be on the standard Shopper Page. From here, you would be able to shop and purchase products at available stores on the marketplace. However, no stores have been created yet. Click the Request Store Ownership button to 
