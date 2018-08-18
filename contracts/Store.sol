@@ -34,6 +34,11 @@ contract Store {
     _;
   }
 
+  modifier stringLengthOkay(string str) {
+    require(bytes(str).length <= 32);
+    _;
+  }
+
   modifier skuExists(uint256 sku) {
     require(
       newestProductSku.sub(sku) >= 0,
@@ -72,7 +77,10 @@ contract Store {
     }
   }
 
-  constructor(address sender, string storeName, string storeDescription) public {
+  constructor(address sender, string storeName, string storeDescription) 
+    public
+    stringLengthOkay(storeName)
+    stringLengthOkay(storeDescription) {
     owner = sender;
     name = storeName;
     description = storeDescription;
@@ -101,7 +109,9 @@ contract Store {
     */
   function addNewProduct(string newProductName, string newProductDescription, uint256 newProductPrice) 
     public
-    isOwner {
+    isOwner
+    stringLengthOkay(newProductName)
+    stringLengthOkay(newProductDescription) {
     Product memory newProduct = Product({
       sku: newestProductSku.add(1), 
       inventoryCount: 0, 
