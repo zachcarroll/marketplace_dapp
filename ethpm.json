@@ -1,0 +1,10 @@
+{
+  "manifest_version": 1,
+  "package_name": "",
+  "version": "1.0.0",
+  "authors": ["Zach Carroll"],
+  "description": "Consensys Final Project",
+  "dependencies": {
+    "zeppelin": "^1.0.4"
+  }
+}

@@ -1,6 +1,6 @@
 pragma solidity ^0.4.18;
 
-import 'openzeppelin-solidity/contracts/math/SafeMath.sol';
+import "zeppelin/contracts/math/SafeMath.sol";
 
 
 /** @title Marketplace contract. */

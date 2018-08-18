@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules
+installed_contracts
 
 # testing
 coverage

@@ -24,11 +24,13 @@ Once granted store ownership approval, new store owners can create stores, add p
 When users purchase products from a given store, inventory is adjusted, Ether is held in the store for store owners to withdraw.
 
 #### Setup/Run Steps
-These steps assume you have NodeJS, NPM, Truffle, and MetaMask already set up. If you are missing any of those dependencies, please find their respective documentation online and set them up first.
+**Note 1:** These steps assume you have NodeJS, NPM, Truffle, Git and MetaMask already set up. If you are missing any of those dependencies, please find their respective documentation online and set them up first.
+**Note 2:** These instructions use truffle develop instead of the ganache-cli to run a local blockchain. If you are used to ganache, please note the default port for truffle develop is different, so please follow the below steps carefully. 
 
 1. Open a terminal session and navigate to the location you'd like to store a copy of the repo in. 
 1. Clone the repo: `git clone https://github.com/zachcarroll/marketplace_dapp.git`.
 1. Move into the root directory of the project: `cd marketplace_dapp`.
+1. Install ETHpm library dependencies (Open Zeppelin): `truffle install`.
 1. Start a local blockchain using truffle: `truffle develop`.
 1. Inside the truffle console (which you should now be in), migrate smart contracts: `migrate`.
 1. Open a second terminal window and navigate to the root directory of the project.
