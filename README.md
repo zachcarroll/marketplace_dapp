@@ -24,6 +24,7 @@ When users purchase products from a given store, inventory is adjusted, Ether is
 
 #### Setup/Run Steps
 **Note 1:** These steps assume you have NodeJS, NPM, Truffle, Git and MetaMask already set up. If you are missing any of those dependencies, please find their respective documentation online and set them up first.
+
 **Note 2:** These instructions use truffle develop instead of the ganache-cli to run a local blockchain. If you are used to ganache, please note the default port for truffle develop is different, so please follow the below steps carefully. 
 
 1. Open a terminal session and navigate to the location you'd like to store a copy of the repo in. 
