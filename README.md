@@ -1,5 +1,3 @@
-
-
 # Decentralized Online Marketplace
 ## Consensys Academy Final Project
 ### Zach Carroll - carroll.zach@gmail.com
@@ -46,7 +44,19 @@ If you ever encounter an issue, please see the Issues section below.
 #### Interacting with the Application Steps
 1. When you first land on the application, you should have the Admin Account (Account 1 by default) selected in MetaMask. As there are no open requests for store ownership, there is nothing to do on this page.
 1. Open MetaMask and select Account 2.
-1. Reload the page. You should now be on the standard Shopper Page. From here, you would be able to shop and purchase products at available stores on the marketplace. However, no stores have been created yet. Click the Request Store Ownership button to 
+1. Reload the page. You should now be on the standard Shopper Page. From here, you would be able to shop and purchase products at available stores on the marketplace. However, no stores have been created yet. The only thing to do at this point is to click the Request Store Ownership button to send a request to the marketplace admins to set Account 2 as a store owner, and submit the transaction via MetaMask. You should see the UI update to a loading state, and then once the transaction is processed by the network, the UI should update to notify you that your request has been received by the admins.
+1. Open MetaMask and select Account 1 and reload. You should now be back on the Admin account page, where the open request from Account 2 should be available for approval.
+1. Click the approve button, and submit the transaction via MetaMask. You should see the UI go to a loading state, and then once the transaction has been verified by the network, the UI should update to reflect the new empty state of open requests.
+1. Open MetaMask and navigate back to Account 2, and reload. You should now land on the Store Owner page. 
+1. Create a new store by filling in the inputs and clicking submit, submitting the transaction via MetaMask when it pops up.
+1. The UI should react to the updates, and eventually render your new store in the bottom section of the page.
+1. Add a product or two by filling in the form at the bottom of the store widget, clicking submit, and verifying via MetaMask. 
+1. Once the UI updates with your new products, add some inventory to them via the number input and submit button next to each product, verify via MetaMask.
+1. Now that you've got some products to sell on the marketplace, it's time to assume the role of the shopper.
+1. Open MetaMask and select Account 3 and reload.
+1. As this account hasn't done anything on the marketplace yet, the default Shopper page should load.
+1. This time though, the marketplace has a store with some products. The UI should render a shopper version of the store(s) at the bottom of the page.
+1. As Account 3, you can now input a quantity to purchase of a given product, and click the purchase button to make a purchase in ETH. Verify in Metamask after it pops up. You've new successfuly paid for a product using ETH, and sent that ETH to the store contract, which allows only the store owner to withdraw.
 
 #### Running Tests
 1. From the project root start the truffle development blockchain: `truffle develop`.
@@ -57,3 +67,8 @@ MetaMask transaction nonce doesnt' match local blockchain:
 1. Reset all accounts in MetaMask (via settings in the MetaMask UI)
 1. Re-migrate and reset accounts and contracts from truffle development environment: `migrate --reset`.
 
+`truffle migrate` fails:
+1. Usually this occurs when contracts have been migrated before, and the JSON ABI files are pointing to the old addresses. Fix by re-running migrations with the reset flag: `migrate --reset`.
+
+MetaMask won't connect to the local blockchain.
+1. It's possible you are running against the wrong port. The instructions use the new truffle develop blockchain, which runs on port `9545` compared to the ganache-cli blockchain that runs on port `8545`. Make sure you set your local RPC in the MetaMask UI to point to `9545`.
