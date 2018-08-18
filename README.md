@@ -3,7 +3,6 @@
 ### Zach Carroll - carroll.zach@gmail.com
 
 #### Additional Internal Documentation
-- [Detailed Smart Contract Documentation](documentation/smart_contract_details.md)
 - [Design Pattern Documentation](documentation/design_pattern_decisions.md)
 - [Avoiding Common Attacks Documentation](documentation/avoiding_common_attacks.md)
 
